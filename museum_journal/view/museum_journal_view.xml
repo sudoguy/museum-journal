@@ -7,7 +7,88 @@
             </xpath>
         </template>
 
-        <!-- workers begin -->
+        <!-- Organizations -->
+
+        <record id="view_museum_journal_organization_tree" model="ir.ui.view">
+            <field name="name">museum.journal.organization.tree</field>
+            <field name="model">museum.journal.organization</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_museum_journal_organization_form" model="ir.ui.view">
+            <field name="name">museum.journal.organization.form</field>
+            <field name="model">museum.journal.organization</field>
+            <field name="arch" type="xml">
+                <form string="Организация">
+                    <group string="Организация">
+                        <field name="name"/>
+                    </group>
+
+                    <notebook>
+                        <page string="История мероприятий">
+                            <field name="history" mode="tree">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="worker"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_museum_journal_organization" model="ir.actions.act_window">
+            <field name="name">Список организаций</field>
+            <field name="res_model">museum.journal.organization</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Events -->
+
+        <record id="view_museum_journal_event_tree" model="ir.ui.view">
+            <field name="name">museum.journal.event.tree</field>
+            <field name="model">museum.journal.event</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="worker"/>
+                    <field name="organization"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_museum_journal_event_form" model="ir.ui.view">
+            <field name="name">museum.journal.event.form</field>
+            <field name="model">museum.journal.event</field>
+            <field name="arch" type="xml">
+                <form string="Мероприятие">
+                    <group string="Мероприятие">
+                        <field name="name"/>
+                        <field name="worker"/>
+                        <field name="organization"/>
+                        <field name="amount"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_museum_journal_event" model="ir.actions.act_window">
+            <field name="name">Список мероприятий</field>
+            <field name="res_model">museum.journal.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Workers -->
 
         <record id="view_museum_journal_worker_tree" model="ir.ui.view">
             <field name="name">museum.journal.worker.tree</field>
@@ -27,7 +108,7 @@
             <field name="model">museum.journal.worker</field>
             <field name="arch" type="xml">
                 <form string="Данные работника">
-                    <group>
+                    <group string="Работник музея">
                         <field name="last_name"/>
                         <field name="first_name"/>
                         <field name="middle_name"/>
@@ -38,7 +119,7 @@
         </record>
 
         <record id="action_museum_journal_worker" model="ir.actions.act_window">
-            <field name="name">Список клиентов</field>
+            <field name="name">Список экскурсоводов</field>
             <field name="res_model">museum.journal.worker</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -58,8 +139,5 @@
                 </search>
             </field>
         </record>
-
-        <!--workers end-->
-
     </data>
 </openerp>

@@ -26,3 +26,29 @@ class Worker(models.Model):
                 ('first_name', operator, value),
                 ('middle_name', operator, value),
                 ]
+
+
+class Organization(models.Model):
+    _name = 'museum.journal.organization'
+    _rec_name = 'name'
+
+    name = fields.Char(string=u'Наименование', required=True, size=300)
+    history = fields.One2many(string=u'История', compute='_get_history', comodel_name='museum.journal.event')
+
+    @api.one
+    def _get_history(self):
+        event_ids = self.env['museum.journal.event'].search([('organization', '=', self.id)])
+        if event_ids:
+            self.history = event_ids[-20:]
+        else:
+            self.history = None
+
+
+class Event(models.Model):
+    _name = 'museum.journal.event'
+    _rec_name = 'name'
+
+    name = fields.Char(string=u'Мероприятие', required=True, size=400)
+    worker = fields.Many2one(string=u'Экскурсовод', required=True, comodel_name='museum.journal.worker')
+    organization = fields.Many2one(string=u'Организация', comodel_name='museum.journal.organization')
+    amount = fields.Integer(string=u'Кол-во', default=0)

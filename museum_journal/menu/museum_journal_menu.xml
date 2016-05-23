@@ -5,16 +5,22 @@
 
         <!-- Журнал -->
 
-        <!--<menuitem name="Журнал" sequence="10" id="menu_museum_journal_list" parent="menu_museum_journal_root"/>-->
+        <menuitem name="Журнал" sequence="10" id="menu_museum_journal_list" parent="menu_museum_journal_root"/>
+
+        <menuitem name="Мероприятия" sequence="11" id="menu_museum_journal_event" parent="menu_museum_journal_list"
+                  action="action_museum_journal_event"/>
 
         <!-- Справочники -->
 
         <menuitem name="Справочники" sequence="15" id="menu_museum_journal_directory"
                   parent="menu_museum_journal_root"/>
 
-        <menuitem name="Список работников" sequence="16" id="menu_museum_journal_worker"
+        <menuitem name="Список экскурсоводов" sequence="16" id="menu_museum_journal_worker"
                   parent="menu_museum_journal_directory"
                   action="action_museum_journal_worker"/>
+        <menuitem name="Список организаций" sequence="17" id="menu_museum_journal_organization"
+                  parent="menu_museum_journal_directory"
+                  action="action_museum_journal_organization"/>
 
     </data>
 </openerp>
