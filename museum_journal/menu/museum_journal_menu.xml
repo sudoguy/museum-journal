@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem name="Журнал" id="menu_museum_journal_root" sequence="6"/>
+
+        <!-- Журнал -->
+
+        <!--<menuitem name="Журнал" sequence="10" id="menu_museum_journal_list" parent="menu_museum_journal_root"/>-->
+
+        <!-- Справочники -->
+
+        <menuitem name="Справочники" sequence="15" id="menu_museum_journal_directory"
+                  parent="menu_museum_journal_root"/>
+
+        <menuitem name="Список работников" sequence="16" id="menu_museum_journal_worker"
+                  parent="menu_museum_journal_directory"
+                  action="action_museum_journal_worker"/>
+
+    </data>
+</openerp>

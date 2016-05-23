@@ -1,6 +1,0 @@
-.openerp .oe_form_field_one2many .oe_list_content > tbody tr:hover, .openerp .oe_form_field_many2many .oe_list_content > tbody tr:hover {
-background: #eadee0;
-}
-.openerp .oe_list_content > tbody tr:hover {
-background: #eadee0;
-}

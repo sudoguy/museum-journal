@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 # noinspection PyStatementEffect
 {
-    'name': "Gcap Base",
-    'summary': """Базовые записи Gravicap""",
+    'name': "Museum Base",
+    'summary': """Базовые записи""",
 
     'description': """
-        В модуле хранятся общие записи и настройки для Gravicap
+        В модуле хранятся общие записи и настройки для Museum
     """,
 
-    'author': "TroLL",
-    'website': "http://www.gravicap.ru",
+    'author': "sudoguy",
+    'website': "",
     'license ': 'Proprietary',
 
     'application': False,

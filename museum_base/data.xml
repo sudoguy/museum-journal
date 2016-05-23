@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="0">
-        <record id="open_module_tree_gcap" model="ir.actions.act_window">
-            <field name="name">GCAP Modules</field>
+        <record id="open_module_tree_museum" model="ir.actions.act_window">
+            <field name="name">Museum Modules</field>
             <field name="res_model">ir.module.module</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
-            <field name="domain">[('name', 'ilike', 'gcap_')]</field>
+            <field name="domain">[('name', 'ilike', 'museum_')]</field>
             <field name="search_view_id" ref="base.view_module_filter"/>
             <field name="help" type="html">
                 <p>
@@ -15,6 +15,7 @@
             </field>
         </record>
 
-        <menuitem name="Gravicap" parent="base.menu_management" id="modules_gcap" sequence="7" action="open_module_tree_gcap"/>
+        <menuitem name="Museum" parent="base.menu_management" id="modules_museum" sequence="7"
+                  action="open_module_tree_museum"/>
     </data>
 </openerp>
