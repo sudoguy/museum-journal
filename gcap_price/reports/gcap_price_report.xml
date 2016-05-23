@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Отчеты -->
+
+        <record id="report_pension_fund_reference_id" model="ir.actions.report.xml">
+            <field name="name">Справка в ПФ</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kspu.dean.student</field>
+            <field name="report_name">pension_fund_reference</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="tml_source">file</field>
+            <field name="report_rml">kspu_dean/reports/template/pension_fund_reference.odt</field>
+            <field name="parser_state">default</field>
+        </record>
+
+        <record id="report_student_card_id" model="ir.actions.report.xml">
+            <field name="name">Учебная карточка студента</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kspu.dean.student</field>
+            <field name="report_name">student_card</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="tml_source">file</field>
+            <field name="report_rml">kspu_dean/reports/template/student_card.odt</field>
+            <field name="parser_state">default</field>
+        </record>
+
+        <record id="report_social_grants_id" model="ir.actions.report.xml">
+            <field name="name">Приказ о начислении соц.стипендии</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kspu.dean.student</field>
+            <field name="report_name">social_grants</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="tml_source">file</field>
+            <field name="report_rml">kspu_dean/reports/template/social_grants.odt</field>
+            <field name="parser_state">default</field>
+        </record>
+
+              
+        <record id="report_group_id" model="ir.actions.report.xml">
+            <field name="name">Студенты группы</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kspu.dean.stgroup</field>
+            <field name="report_name">group</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="tml_source">file</field>
+            <field name="report_rml">kspu_dean/reports/template/stgroup.odt</field>
+            <field name="parser_state">default</field>
+        </record>
+
+        <!-- Пункты в меню -->
+        <!-- Аттрибуты дублируют значения выше -->
+
+        <report id="report_group_id" model="kspu.dean.stgroup" name="group" string="Печать студентов"/>
+        <report id="report_pension_fund_reference_id" model="kspu.dean.student" name="pension_fund_reference" string="Справка в ПФ"/>
+        <report id="report_student_card_id" model="kspu.dean.student" name="student_card" string="Учебная карточка студента"/>
+        <report id="report_social_grants_id" model="kspu.dean.student" name="social_grants" string="Приказ о начислении соц.стипендии"/>
+    </data>
+</openerp>
+

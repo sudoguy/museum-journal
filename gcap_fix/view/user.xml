@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_users_form_view" model="ir.ui.view">
+            <field name="name">res.users.form.view</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="groups_id" eval="[(4,ref('gcap_fix.group_gcap_fix_superuser'))]"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Gravicap">
+                        <group string="Сотрудник">
+                            <field name="employee_id" />
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>
+

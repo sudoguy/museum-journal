@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem name="Прайсы" id="menu_gcap_price_root" sequence="7"/>
+
+        <!-- Отдел продаж -->
+
+        <menuitem name="Отдел продаж" sequence="10" id="menu_gcap_price_seller" parent="menu_gcap_price_root"/>
+
+        <menuitem name="Прайсы" sequence="11" id="menu_gcap_price_pricelists" parent="menu_gcap_price_seller"
+                  action="base.grant_menu_access"/>
+    </data>
+</openerp>
