@@ -48,7 +48,8 @@ class Event(models.Model):
     _name = 'museum.journal.event'
     _rec_name = 'name'
 
-    name = fields.Char(string=u'Мероприятие', required=True, size=400)
+    name = fields.Char(string=u'Экскурсия', required=True, size=400)
     worker = fields.Many2one(string=u'Экскурсовод', required=True, comodel_name='museum.journal.worker')
     organization = fields.Many2one(string=u'Организация', comodel_name='museum.journal.organization')
     amount = fields.Integer(string=u'Кол-во', default=0)
+    comment = fields.Text(string=u'Примечание')
