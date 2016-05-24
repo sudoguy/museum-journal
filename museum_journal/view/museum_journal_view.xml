@@ -34,7 +34,10 @@
                                 <tree>
                                     <field name="name"/>
                                     <field name="worker"/>
+                                    <field name="museum_address"/>
                                     <field name="amount"/>
+                                    <field name="validity_from"/>
+                                    <field name="validity_to"/>
                                 </tree>
                             </field>
                         </page>
@@ -132,6 +135,20 @@
                         <field name="middle_name"/>
                         <field name="phone_number" placeholder="+7(   )-   -  -  "/>
                     </group>
+                    <notebook>
+                        <page string="История мероприятий">
+                            <field name="history" mode="tree">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="organization"/>
+                                    <field name="museum_address"/>
+                                    <field name="amount"/>
+                                    <field name="validity_from"/>
+                                    <field name="validity_to"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </form>
             </field>
         </record>

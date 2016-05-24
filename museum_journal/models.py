@@ -17,6 +17,15 @@ class Worker(models.Model):
     middle_name = fields.Char(string=u'Отчество', required=True, size=100)
     full_name = fields.Char(string=u'ФИО', compute="_full_name", search="_search_full_name")
     phone_number = fields.Char(string=u'Номер телефона', required=False, size=50)
+    history = fields.One2many(string=u'История', compute='_get_history', comodel_name='museum.journal.event')
+
+    @api.one
+    def _get_history(self):
+        event_ids = self.env['museum.journal.event'].search([('worker', '=', self.id)])
+        if event_ids:
+            self.history = event_ids[-20:]
+        else:
+            self.history = None
 
     @api.one
     @api.depends('last_name', 'first_name', 'middle_name')
