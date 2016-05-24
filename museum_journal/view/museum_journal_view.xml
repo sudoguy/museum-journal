@@ -60,7 +60,8 @@
             <field name="name">museum.journal.event.calendar</field>
             <field name="model">museum.journal.event</field>
             <field name="arch" type="xml">
-                <calendar string="Расписание" color="museum_address" date_start="validity_from" date_stop="validity_to">
+                <calendar string="Расписание" quick_add="0" mode="week" color="museum_address"
+                          date_start="validity_from" date_stop="validity_to">
                     <field name='name'/>
                     <field name='worker'/>
                 </calendar>
