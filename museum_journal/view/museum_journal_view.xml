@@ -84,8 +84,8 @@
             <field name="name">museum.journal.event.form</field>
             <field name="model">museum.journal.event</field>
             <field name="arch" type="xml">
-                <form string="Мероприятие">
-                    <group string="Мероприятие">
+                <form string="Экскурсия">
+                    <group string="Экскурсия">
                         <field name="name"/>
                         <field name="worker"/>
                         <field name="organization"/>
@@ -93,6 +93,7 @@
                         <field name="amount"/>
                         <field name="validity_from"/>
                         <field name="validity_to"/>
+                        <field name="comment"/>
                     </group>
                 </form>
             </field>
