@@ -7,7 +7,7 @@
 
         <menuitem name="Журнал" sequence="10" id="menu_museum_journal_list" parent="menu_museum_journal_root"/>
 
-        <menuitem name="Мероприятия" sequence="11" id="menu_museum_journal_event" parent="menu_museum_journal_list"
+        <menuitem name="Экскурсии" sequence="11" id="menu_museum_journal_event" parent="menu_museum_journal_list"
                   action="action_museum_journal_event"/>
 
         <!-- Справочники -->

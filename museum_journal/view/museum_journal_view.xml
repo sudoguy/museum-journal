@@ -29,15 +29,13 @@
                     </group>
 
                     <notebook>
-                        <page string="История мероприятий">
+                        <page string="История экскурсий">
                             <field name="history" mode="tree">
                                 <tree>
-                                    <field name="name"/>
-                                    <field name="worker"/>
                                     <field name="museum_address"/>
-                                    <field name="amount"/>
+                                    <field name="worker"/>
                                     <field name="validity_from"/>
-                                    <field name="validity_to"/>
+                                    <field name="amount"/>
                                 </tree>
                             </field>
                         </page>
@@ -62,7 +60,6 @@
             <field name="arch" type="xml">
                 <calendar string="Расписание" quick_add="0" mode="week" color="museum_address"
                           date_start="validity_from" date_stop="validity_to">
-                    <field name='name'/>
                     <field name='worker'/>
                 </calendar>
             </field>
@@ -73,13 +70,11 @@
             <field name="model">museum.journal.event</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
-                    <field name="worker"/>
-                    <field name="organization"/>
                     <field name="museum_address"/>
-                    <field name="amount"/>
+                    <field name="organization"/>
                     <field name="validity_from"/>
-                    <field name="validity_to"/>
+                    <field name="amount"/>
+                    <field name="worker"/>
                 </tree>
             </field>
         </record>
@@ -90,13 +85,11 @@
             <field name="arch" type="xml">
                 <form string="Экскурсия">
                     <group string="Экскурсия">
-                        <field name="name"/>
-                        <field name="worker"/>
-                        <field name="organization"/>
                         <field name="museum_address"/>
-                        <field name="amount"/>
+                        <field name="organization"/>
                         <field name="validity_from"/>
-                        <field name="validity_to"/>
+                        <field name="amount"/>
+                        <field name="worker"/>
                         <field name="comment"/>
                     </group>
                 </form>
@@ -104,7 +97,7 @@
         </record>
 
         <record id="action_museum_journal_event" model="ir.actions.act_window">
-            <field name="name">Список мероприятий</field>
+            <field name="name">Список экскурсий</field>
             <field name="res_model">museum.journal.event</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar</field>
@@ -137,15 +130,13 @@
                         <field name="phone_number" placeholder="+7(   )-   -  -  "/>
                     </group>
                     <notebook>
-                        <page string="История мероприятий">
+                        <page string="История экскурсий">
                             <field name="history" mode="tree">
                                 <tree>
-                                    <field name="name"/>
-                                    <field name="organization"/>
                                     <field name="museum_address"/>
-                                    <field name="amount"/>
+                                    <field name="organization"/>
                                     <field name="validity_from"/>
-                                    <field name="validity_to"/>
+                                    <field name="amount"/>
                                 </tree>
                             </field>
                         </page>
