@@ -1,6 +1,12 @@
 # coding=utf-8 #
 from openerp import models, api, fields
 
+MUSEUMS = [
+    ('1', u'Первый музей'),
+    ('2', u'Второй музей'),
+    ('3', u'Третий музей'),
+]
+
 
 class Worker(models.Model):
     _name = 'museum.journal.worker'
@@ -49,6 +55,9 @@ class Event(models.Model):
     _rec_name = 'name'
 
     name = fields.Char(string=u'Мероприятие', required=True, size=400)
+    museum_address = fields.Selection(selection=MUSEUMS, default='1', string=u'Музей')
     worker = fields.Many2one(string=u'Экскурсовод', required=True, comodel_name='museum.journal.worker')
     organization = fields.Many2one(string=u'Организация', comodel_name='museum.journal.organization')
     amount = fields.Integer(string=u'Кол-во', default=0)
+    validity_from = fields.Datetime(string=u'Срок действия с')
+    validity_to = fields.Datetime(string=u'Срок действия до')
